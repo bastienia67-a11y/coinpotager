@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-label="Terrasse et aménagement extérieur">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c0654a"/>
+      <stop offset="1" stop-color="#8f4533"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg2)"/>
+  <circle cx="110" cy="90" r="60" fill="#d99a3a" opacity="0.5"/>
+  <!-- sol terrasse -->
+  <rect y="290" width="600" height="110" fill="#46382b" opacity="0.5"/>
+  <g stroke="#f6f1e7" stroke-width="2" opacity="0.25">
+    <line x1="0" y1="320" x2="600" y2="320"/>
+    <line x1="150" y1="290" x2="150" y2="400"/>
+    <line x1="300" y1="290" x2="300" y2="400"/>
+    <line x1="450" y1="290" x2="450" y2="400"/>
+  </g>
+  <!-- chaise stylisée -->
+  <g stroke="#f6f1e7" stroke-width="9" fill="none" stroke-linecap="round">
+    <path d="M250 200 L250 300 M350 200 L350 300"/>
+    <path d="M240 200 L360 200 L350 250 L250 250 Z" fill="#f6f1e7" opacity="0.15"/>
+    <path d="M250 250 L250 300 M350 250 L350 300"/>
+  </g>
+  <!-- plante en pot -->
+  <g transform="translate(440,210)">
+    <path d="M0 0 q-30 -50 -10 -90 q24 30 10 90 Z" fill="#bcd9b0"/>
+    <path d="M0 0 q30 -50 10 -90 q-24 30 -10 90 Z" fill="#bcd9b0"/>
+    <path d="M-22 0 L22 0 L14 60 L-14 60 Z" fill="#46382b"/>
+  </g>
+  <!-- guirlande lumineuse -->
+  <path d="M40 60 Q300 130 560 60" fill="none" stroke="#f6f1e7" stroke-width="2" opacity="0.5"/>
+  <g fill="#d99a3a">
+    <circle cx="120" cy="92" r="6"/><circle cx="220" cy="110" r="6"/>
+    <circle cx="320" cy="115" r="6"/><circle cx="420" cy="108" r="6"/>
+    <circle cx="500" cy="88" r="6"/>
+  </g>
+</svg>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendrier de plantation mois par mois — Coin &amp; Potager</title>
+<meta name="description" content="Quoi semer et planter selon les mois ? Notre calendrier de plantation potager mois par mois pour ne jamais rater une semence et optimiser ses récoltes.">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  /* ---- Calendrier ---- */
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 18px;
+    margin: 32px 0;
+  }
+  .cal-month {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px 22px;
+    box-shadow: 0 4px 16px rgba(70,56,43,.08);
+    border-top: 4px solid var(--moss);
+  }
+  .cal-month.hiver { border-top-color: #7da9c6; }
+  .cal-month.printemps { border-top-color: var(--moss); }
+  .cal-month.ete { border-top-color: var(--gold); }
+  .cal-month.automne { border-top-color: var(--terracotta); }
+  .cal-month h3 {
+    font-size: 1.1rem;
+    color: var(--moss-deep);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cal-month h3 .saison-tag {
+    font-size: .65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: var(--cream);
+    color: var(--text-mute);
+  }
+  .cal-section-label {
+    font-size: .72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--text-mute);
+    margin: 10px 0 4px;
+  }
+  .cal-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 6px;
+  }
+  .cal-tag {
+    font-size: .8rem;
+    background: var(--cream);
+    border-radius: 20px;
+    padding: 3px 10px;
+    color: var(--moss-deep);
+  }
+  .cal-tag.semer { background: #e8f0e6; }
+  .cal-tag.planter { background: #fdf3e7; }
+  .cal-tag.recolter { background: #fdeaea; }
+  .cal-tag.faire { background: #e8edf5; }
+  .cal-note {
+    font-size: .82rem;
+    color: var(--text-mute);
+    font-style: italic;
+    margin-top: 10px;
+    border-top: 1px solid var(--sand);
+    padding-top: 8px;
+  }
+  .legende {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0 0 28px;
+    font-size: .85rem;
+  }
+  .legende span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legende-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .tip-box {
+    background: #e8f0e6;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 24px 0;
+    border-left: 4px solid var(--moss);
+  }
+  .tip-box strong { color: var(--moss-deep); }
+  @media(max-width: 600px) {
+    .cal-grid { grid-template-columns: 1fr; }
+  }
+</style>
+<script src="../assets/analytics.js" defer></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <nav class="crumb" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span>/</span><a href="../jardin/index.html">Jardin</a><span>/</span>Calendrier de plantation</nav>
+
+  <article class="article">
+    <span class="badge">Conseil · Jardin</span>
+    <h1>Calendrier de plantation mois par mois</h1>
+    <p class="lead">Semer au bon moment, c'est la moitié du travail au potager. Trop tôt, les plants gèlent ou végètent. Trop tard, la saison est perdue. Ce calendrier vous dit quoi faire chaque mois pour des récoltes régulières et bien étalées.</p>
+    <p class="byline">Mis à jour le 2 juin 2026 <span class="dot"></span> Lecture 8 min</p>
+
+    <div class="article-hero" style="background:url('../assets/img-jardin.svg') center/cover no-repeat, linear-gradient(135deg, #4a7043, #2c4426);" role="img" aria-label="Potager et plantation"></div>
+
+    <div class="toc">
+      <strong>Au sommaire</strong>
+      <ul>
+        <li><a href="#principes">Les 3 règles à retenir avant tout</a></li>
+        <li><a href="#calendrier">Le calendrier mois par mois</a></li>
+        <li><a href="#interieur">Semis en intérieur vs en pleine terre</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+      </ul>
+    </div>
+
+    <p>Ce calendrier est valable pour la majeure partie de la France (zones climatiques de plaine, hors grand Sud méditerranéen et montagne). En zone méditerranéenne, avancez tout d'un mois en début de saison ; en altitude ou dans le Grand Nord, reculez de deux à quatre semaines selon les années.</p>
+
+    <h2 id="principes">Les 3 règles à retenir avant tout</h2>
+
+    <p><strong>Les dates de gel font loi.</strong> En France, les Saints de Glace (11-13 mai) marquent traditionnellement la fin des gelées tardives dans la plupart des régions. Avant cette date, tout plant de tomate, courgette ou basilic mis en pleine terre est menacé. Après, vous pouvez transplanter sans risque.</p>
+
+    <p><strong>Semer trop tôt n'avance pas la récolte.</strong> Un semis trop précoce en intérieur donne des plants étiolés (longs, faibles) par manque de lumière. Mieux vaut semer au bon moment et avoir un plant compact et vigoureux qu'un plant trop long qu'on va galérer à transplanter.</p>
+
+    <p><strong>L'échelonnement est votre ami.</strong> Plutôt que de tout semer en une seule fois, étalez les semis toutes les trois semaines pour avoir des récoltes continues. Applicable surtout aux salades, radis, épinards et carottes.</p>
+
+    <div class="legende">
+      <span><span class="legende-dot" style="background:#e8f0e6;border:1.5px solid var(--moss);"></span> Semer en intérieur ou sous abri</span>
+      <span><span class="legende-dot" style="background:#fdf3e7;border:1.5px solid var(--gold);"></span> Planter / transplanter en pleine terre</span>
+      <span><span class="legende-dot" style="background:#fdeaea;border:1.5px solid var(--terracotta);"></span> Récolter</span>
+      <span><span class="legende-dot" style="background:#e8edf5;border:1.5px solid #7da9c6;"></span> Tâches du jardin</span>
+    </div>
+
+    <h2 id="calendrier">Le calendrier mois par mois</h2>
+
+    <div class="cal-grid">
+
+      <div class="cal-month hiver">
+        <h3>Janvier <span class="saison-tag">Hiver</span></h3>
+        <div class="cal-section-label">Semer (sous abri chauffé)</div>
+        <div class="cal-items">
+          <span class="cal-tag semer">Tomates (fin janvier)</span>
+          <span class="cal-tag semer">Poivrons</span>
+          <span class="cal-tag semer">Aubergines</span>
+        </div>
+        <div class="cal-section-label">À faire au jardin</div>
+        <div class="cal-items">
+          <span class="cal-tag faire">Préparer les bacs et le compost</span>
+          <span class="cal-tag faire">Taillez les fruitiers</span>
+          <span class="cal-tag faire">Planifier les rotations</span>
+        </div>
+        <p class="cal-note">Mois calme au potager. Profitez-en pour commander les semences et préparer votre plan de culture.</p>
+      </div>
+
+      <div class="cal-month hiver">
+        <h3>Février <span class="saison-tag">Hiver</span></h3>
+        <div class="cal-section-label">Semer (sous abri chauffé)</div>
+        <div class="cal-items">
+          <span class="cal-tag semer">Tomates</span>
+          <span class="cal-tag semer">Poivrons</span>
+          <span class="cal-tag semer">Céleris</span>
+          <span class="cal-tag semer">Laitues (sous serre)</span>
+        </div>
+        <div class="cal-section-label">À faire au jardin</div>
+        <div class="cal-items">
+          <span class="cal-tag faire">Amender la terre (compost)</span>
+          <span class="cal-tag faire">Désherber à la binette</span>
+        </div>
+        <p class="cal-note">Les premières heures de lumière reviennent. Idéal pour démarrer les semis lents en intérieur bien éclairé.</p>
+      </div>
+
+      <div class="cal-month printemps">
+        <h3>Mars <span class="saison-tag">Printemps</span></h3>
+        <div class="cal-section-label">Semer (sous abri ou pleine terre selon région)</div>
+        <div class="cal-items">
+          <span class="cal-tag semer">Tomates (sous abri)</span>
+          <span class="cal-tag semer">Courgettes (sous abri)</span>
+          <span class="cal-tag semer">Carottes (pleine terre Sud)</span>
+          <span class="cal-tag semer">Épinards</span>
+          <span class="cal-tag semer">Radis</span>
+          <span class="cal-tag semer">Petits pois</span>
+          <span class="cal-tag semer">Laitues</span>
+        </div>
+        <div class="cal-section-label">Planter</div>
+        <div class="cal-items">
+          <span class="cal-tag planter">Pommes de terre (fin mars, Sud)</span>
+          <span class="cal-tag planter">Oignons (bulbes)</span>
+          <span class="cal-tag planter">Échalotes</span>
+        </div>
+        <p class="cal-note">La saison démarre vraiment. Préparez la terre, installez les tuteurs et protégez les semis des limaces.</p>
+      </div>
+
+      <div class="cal-month printemps">
+        <h3>Avril <span class="saison-tag">Printemps</span></h3>
+        <div class="cal-section-label">Semer</div>
+        <div class="cal-items">
+          <span class="cal-tag semer">Carottes</span>
+          <span class="cal-tag semer">Betteraves</span>
+          <span class="cal-tag semer">Haricots (sous abri)</span>
+          <span class="cal-tag semer">Courges (sous abri)</span>
+          <span class="cal-tag semer">Concombres (sous abri)</span>
+          <span class="cal-tag semer">Basilic (sous abri)</span>
+          <span class="cal-tag semer">Navets</span>
+        </div>
+        <div class="cal-section-label">Planter</div>
+        <div class="cal-items">
+          <span class="cal-tag planter">Pommes de terre</span>
+          <span class="cal-tag planter">Plants de laitues</span>
+          <span class="cal-tag planter">Oignons</span>
+        </div>
+        <div class="cal-section-label">Récolter</div>
+        <div class="cal-items">
+          <span class="cal-tag recolter">Épinards (si semés en automne)</span>
+          <span class="cal-tag recolter">Laitues d'hiver</span>
+        </div>
+      </div>
+
+      <div class="cal-month printemps">
+        <h3>Mai <span class="saison-tag">Printemps</span></h3>
+        <div class="cal-section-label">Semer (pleine terre après les Saints de Glace)</div>
+        <div class="cal-items">
+          <span class="cal-tag semer">Haricots verts</span>
+          <span class="cal-tag semer">Courgettes</span>
+          <span class="cal-tag semer">Courges</span>
+          <span class="cal-tag semer">Maïs doux</span>
+          <span class="cal-tag semer">Carottes (2e semis)</span>
+          <span class="cal-tag semer">Radis</span>
+        </div>
+        <div class="cal-section-label">Planter (après le 15 mai)</div>
+        <div class="cal-items">
+          <span class="cal-tag planter">Tomates</span>
+          <span class="cal-tag planter">Poivrons</span>
+          <span class="cal-tag planter">Aubergines</span>
+          <span class="cal-tag planter">Courgettes (plants)</span>
+          <span class="cal-tag planter">Basilic</span>
+        </div>
+        <div class="cal-section-label">Récolter</div>
+        <div class="cal-items">
+          <span class="cal-tag recolter">Radis</span>
+          <span class="cal-tag recolter">Laitues</span>
+          <span class="cal-tag recolter">Petits pois</span>
+          <span class="cal-tag recolter">Épinards</span>
+        </div>
+        <p class="cal-note">Mois charnière. Attendre les Saints de Glace (11-13 mai) avant de transplanter les plants frileaux.</p>
+      </div>
+
+      <div class="cal-month ete">
+        <h3>Juin <span class="saison-tag">Été</span></h3>
+        <div class="cal-section-label">Semer</div>
+        <div class="cal-items">
+          <span class="cal-tag semer">Haricots (2e semis)</span>
+          <span class="cal-tag semer">Carottes (3e semis)</span>
+          <span class="cal-tag semer">Betteraves</span>
+          <span class="cal-tag semer">Laitues (pour automne)</span>
+          <span class="cal-tag semer">Cornichons</span>
+        </div>
+        <div class="cal-section-label">Récolter</div>
+        <div class="cal-items">
+          <span class="cal-tag recolter">Laitues</span>
+          <span class="cal-tag recolter">Radis</span>
+          <span class="cal-tag recolter">Petits pois</span>
+          <span class="cal-tag recolter">Fraises</span>
+          <span class="cal-tag recolter">Premières courgettes</span>
+        </div>
+        <div class="cal-section-label">À faire</div>
+        <div class="cal-items">
+          <span class="cal-tag faire">Pailler le potager</span>
+          <span class="cal-tag faire">Tuteurer les tomates</span>
+          <span class="cal-tag faire">Arroser régulièrement</span>
+        </div>
+      </div>
+
+      <div class="cal-month ete">
+        <h3>Juillet <span class="saison-tag">Été</span></h3>
+        <div class="cal-section-label">Semer (pour l'automne)</div>
+        <div class="cal-items">
+          <span class="cal-tag semer">Laitues d'automne</span>
+          <span class="cal-tag semer">Épinards</span>
+          <span class="cal-tag semer">Mâche</span>
+          <span class="cal-tag semer">Navets</span>
+          <span class="cal-tag semer">Radis d'automne</span>
+        </div>
+        <div class="cal-section-label">Récolter</div>
+        <div class="cal-items">
+          <span class="cal-tag recolter">Tomates (premières)</span>
+          <span class="cal-tag recolter">Courgettes</span>
+          <span class="cal-tag recolter">Haricots verts</span>
+          <span class="cal-tag recolter">Concombres</span>
+          <span class="cal-tag recolter">Poivrons</span>
+          <span class="cal-tag recolter">Carottes</span>
+        </div>
+        <p class="cal-note">Plein été = plein potager. Récoltez souvent pour stimuler la production, et pensez déjà aux cultures d'automne.</p>
+      </div>
+
+      <div class="cal-month ete">
+        <h3>Août <span class="saison-tag">Été</span></h3>
+        <div class="cal-section-label">Semer (cultures d'automne)</div>
+        <div class="cal-items">
+          <span class="cal-tag semer">Épinards</span>
+          <span class="cal-tag semer">Mâche</span>
+          <span class="cal-tag semer">Laitues d'hiver</span>
+          <span class="cal-tag semer">Ail (fin août)</span>
+          <span class="cal-tag semer">Engrais verts</span>
+        </div>
+        <div class="cal-section-label">Récolter</div>
+        <div class="cal-items">
+          <span class="cal-tag recolter">Tomates</span>
+          <span class="cal-tag recolter">Poivrons</span>
+          <span class="cal-tag recolter">Aubergines</span>
+          <span class="cal-tag recolter">Courges (début)</span>
+          <span class="cal-tag recolter">Haricots</span>
+          <span class="cal-tag recolter">Maïs doux</span>
+        </div>
+      </div>
+
+      <div class="cal-month automne">
+        <h3>Septembre <span class="saison-tag">Automne</span></h3>
+        <div class="cal-section-label">Semer</div>
+        <div class="cal-items">
+          <span class="cal-tag semer">Mâche</span>
+          <span class="cal-tag semer">Épinards</span>
+          <span class="cal-tag semer">Radis d'hiver</span>
+          <span class="cal-tag semer">Engrais verts (phacélie, moutarde)</span>
+        </div>
+        <div class="cal-section-label">Planter</div>
+        <div class="cal-items">
+          <span class="cal-tag planter">Ail</span>
+          <span class="cal-tag planter">Oignons blancs</span>
+          <span class="cal-tag planter">Plants de laitues d'hiver</span>
+        </div>
+        <div class="cal-section-label">Récolter</div>
+        <div class="cal-items">
+          <span class="cal-tag recolter">Tomates (dernières)</span>
+          <span class="cal-tag recolter">Courges et potirons</span>
+          <span class="cal-tag recolter">Haricots à écosser</span>
+          <span class="cal-tag recolter">Poireaux (début)</span>
+        </div>
+        <p class="cal-note">Profitez des derniers jours chauds pour semer les cultures résistantes au froid. Plantez l'ail pour une récolte l'été prochain.</p>
+      </div>
+
+      <div class="cal-month automne">
+        <h3>Octobre <span class="saison-tag">Automne</span></h3>
+        <div class="cal-section-label">Semer (sous abri)</div>
+        <div class="cal-items">
+          <span class="cal-tag semer">Mâche</span>
+          <span class="cal-tag semer">Épinards (sous tunnel)</span>
+        </div>
+        <div class="cal-section-label">Planter</div>
+        <div class="cal-items">
+          <span class="cal-tag planter">Ail (avant le 15 oct.)</span>
+          <span class="cal-tag planter">Bulbes de tulipes (dès le 15)</span>
+        </div>
+        <div class="cal-section-label">Récolter</div>
+        <div class="cal-items">
+          <span class="cal-tag recolter">Potirons et courges</span>
+          <span class="cal-tag recolter">Betteraves</span>
+          <span class="cal-tag recolter">Carottes</span>
+          <span class="cal-tag recolter">Poireaux</span>
+          <span class="cal-tag recolter">Choux</span>
+        </div>
+        <div class="cal-section-label">À faire</div>
+        <div class="cal-items">
+          <span class="cal-tag faire">Pailler les pieds fragiles</span>
+          <span class="cal-tag faire">Vider le compost mûr</span>
+        </div>
+      </div>
+
+      <div class="cal-month hiver">
+        <h3>Novembre <span class="saison-tag">Hiver</span></h3>
+        <div class="cal-section-label">Récolter</div>
+        <div class="cal-items">
+          <span class="cal-tag recolter">Poireaux</span>
+          <span class="cal-tag recolter">Choux</span>
+          <span class="cal-tag recolter">Mâche</span>
+          <span class="cal-tag recolter">Épinards (sous tunnel)</span>
+          <span class="cal-tag recolter">Carottes et betteraves en cave</span>
+        </div>
+        <div class="cal-section-label">À faire</div>
+        <div class="cal-items">
+          <span class="cal-tag faire">Retourner et amender le sol</span>
+          <span class="cal-tag faire">Protéger les planches sensibles</span>
+          <span class="cal-tag faire">Nettoyer et ranger les outils</span>
+        </div>
+        <p class="cal-note">Le potager ralentit. Profitez-en pour amender et préparer les planches qui accueilleront les premières cultures au printemps.</p>
+      </div>
+
+      <div class="cal-month hiver">
+        <h3>Décembre <span class="saison-tag">Hiver</span></h3>
+        <div class="cal-section-label">Récolter</div>
+        <div class="cal-items">
+          <span class="cal-tag recolter">Poireaux</span>
+          <span class="cal-tag recolter">Choux de Bruxelles</span>
+          <span class="cal-tag recolter">Mâche</span>
+        </div>
+        <div class="cal-section-label">À faire</div>
+        <div class="cal-items">
+          <span class="cal-tag faire">Commander les semences pour 2027</span>
+          <span class="cal-tag faire">Planifier les rotations</span>
+          <span class="cal-tag faire">Entretenir les outils</span>
+        </div>
+        <p class="cal-note">Le potager est en repos. C'est le moment de préparer la saison suivante sur le papier et de commander les variétés qui vous manquent.</p>
+      </div>
+
+    </div>
+
+    <h2 id="interieur">Semis en intérieur vs en pleine terre</h2>
+
+    <div class="tip-box">
+      <strong>Quoi semer en intérieur ?</strong> Les légumes frileaux qui ont besoin d'un long démarrage : tomates, poivrons, aubergines, céleris, poireaux. Ils ont besoin de chaleur et de lumière dès janvier-mars pour être prêts à transplanter en mai.
+    </div>
+
+    <div class="tip-box" style="background:#fdf3e7;border-left-color:var(--gold);">
+      <strong>Quoi semer directement en pleine terre ?</strong> Les légumes qui supportent mal le repiquage ou poussent vite : carottes, betteraves, haricots, radis, pois, épinards, navets, courgettes. Semez-les directement là où ils vont rester.
+    </div>
+
+    <p>Pour réussir les semis en intérieur, deux conditions essentielles : chaleur (20-25°C pour la germination des tomates/poivrons) et lumière (une fenêtre plein sud ou une lampe de croissance). Sans lumière suffisante, les plants filent et s'affaiblissent.</p>
+
+    <h2 id="faq">Questions fréquentes</h2>
+
+    <h3>Est-ce que le calendrier lunaire aide vraiment ?</h3>
+    <p>Les études scientifiques n'ont pas démontré d'effet significatif de la lune sur les rendements du potager. Ce qui compte vraiment : respecter les températures minimales du sol, la durée du jour et les risques de gel. Concentrez-vous là-dessus avant de regarder les phases lunaires.</p>
+
+    <h3>Mes tomates semées en mars sont trop grandes, que faire ?</h3>
+    <p>Plants trop longs (étiolés) = manque de lumière. Rempotez-les en enterrant le tronc profondément (les tomates font des racines sur la tige enterrée), rapprochez-les de la source lumineuse ou installez une lampe de croissance. À l'extérieur, ils rattraperont vite si transplantés après le 15 mai.</p>
+
+    <h3>Je pars en vacances en août, comment gérer le potager ?</h3>
+    <p>Avant de partir : arrosez abondamment, paillez épais (10 cm), récoltez tout ce qui est mûr (les courgettes oubliées deviennent des courges géantes qui épuisent le plant), installez un programmateur d'arrosage si possible. En cas d'absence de plus de 10 jours, demandez à quelqu'un de récolter régulièrement — c'est ce qui maintient la production.</p>
+
+    <h3>Comment faire tourner les cultures d'une année à l'autre ?</h3>
+    <p>La rotation consiste à ne pas planter la même famille végétale au même endroit deux années de suite. Divisez votre potager en 4 zones et faites tourner : solanacées (tomates, poivrons), légumineuses (haricots, pois), racines (carottes, betteraves), crucifères (choux, navets). Chaque groupe nourrit ou repose le sol différemment.</p>
+
+    <p style="margin-top:30px;"><strong>En résumé :</strong> le secret d'un potager productif tient à deux choses — semer au bon moment (respecter les risques de gel) et échelonner (ne pas tout semer d'un coup). Ce calendrier est votre boussole, mais observez toujours votre terrain : un sol bien drainé au soleil se travaille toujours un peu plus tôt que la moyenne.</p>
+  </article>
+
+  <div id="site-footer"></div>
+  <script src="../assets/layout.js" data-base="../"></script>
+</body>
+</html>

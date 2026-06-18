@@ -1,0 +1,7 @@
+# robots.txt - Coin & Potager
+# Autorise tous les moteurs à explorer l'ensemble du site
+User-agent: *
+Allow: /
+
+# Emplacement du plan du site
+Sitemap: https://www.coinpotager.com/sitemap.xml

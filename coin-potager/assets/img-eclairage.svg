@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-label="Éclairage extérieur solaire et guirlandes">
+  <defs>
+    <linearGradient id="bg-ecl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a2a3a"/>
+      <stop offset="1" stop-color="#2c3e28"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#d99a3a" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#d99a3a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg-ecl)"/>
+  <!-- halos lumineux -->
+  <circle cx="120" cy="130" r="50" fill="url(#halo)"/>
+  <circle cx="300" cy="110" r="55" fill="url(#halo)"/>
+  <circle cx="480" cy="125" r="50" fill="url(#halo)"/>
+  <!-- guirlande fil -->
+  <path d="M40 100 Q180 160 300 140 Q420 120 560 105" fill="none" stroke="#f6f1e7" stroke-width="2" opacity="0.5"/>
+  <!-- ampoules -->
+  <g>
+    <!-- ampoule 1 -->
+    <line x1="120" y1="100" x2="120" y2="120" stroke="#f6f1e7" stroke-width="2" opacity="0.6"/>
+    <ellipse cx="120" cy="132" rx="16" ry="18" fill="#d99a3a" opacity="0.9"/>
+    <rect x="113" y="148" width="14" height="8" rx="2" fill="#f6f1e7" opacity="0.5"/>
+    <!-- ampoule 2 -->
+    <line x1="300" y1="115" x2="300" y2="134" stroke="#f6f1e7" stroke-width="2" opacity="0.6"/>
+    <ellipse cx="300" cy="146" rx="16" ry="18" fill="#d99a3a" opacity="0.9"/>
+    <rect x="293" y="162" width="14" height="8" rx="2" fill="#f6f1e7" opacity="0.5"/>
+    <!-- ampoule 3 -->
+    <line x1="480" y1="102" x2="480" y2="122" stroke="#f6f1e7" stroke-width="2" opacity="0.6"/>
+    <ellipse cx="480" cy="134" rx="16" ry="18" fill="#d99a3a" opacity="0.9"/>
+    <rect x="473" y="150" width="14" height="8" rx="2" fill="#f6f1e7" opacity="0.5"/>
+  </g>
+  <!-- panneau solaire stylisé -->
+  <g transform="translate(80,280)">
+    <rect x="0" y="0" width="90" height="60" rx="6" fill="#1e3a5f"/>
+    <g stroke="#2a5080" stroke-width="1.5">
+      <line x1="30" y1="0" x2="30" y2="60"/>
+      <line x1="60" y1="0" x2="60" y2="60"/>
+      <line x1="0" y1="20" x2="90" y2="20"/>
+      <line x1="0" y1="40" x2="90" y2="40"/>
+    </g>
+    <rect x="0" y="0" width="90" height="60" rx="6" fill="#f6f1e7" opacity="0.06"/>
+    <!-- reflet -->
+    <path d="M8 8 L30 8 L22 28 L0 28 Z" fill="#ffffff" opacity="0.08"/>
+    <line x1="45" y1="60" x2="45" y2="80" stroke="#46382b" stroke-width="5"/>
+    <line x1="20" y1="80" x2="70" y2="80" stroke="#46382b" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <!-- torche solaire sol -->
+  <g transform="translate(420,240)">
+    <line x1="0" y1="0" x2="0" y2="120" stroke="#46382b" stroke-width="8" stroke-linecap="round"/>
+    <ellipse cx="0" cy="-10" rx="20" ry="10" fill="#d99a3a" opacity="0.8"/>
+    <path d="M-8 -18 q0 -20 8 -32 q8 12 8 32 Z" fill="#d99a3a" opacity="0.7"/>
+    <circle cx="0" cy="-10" r="6" fill="#f6f1e7" opacity="0.6"/>
+  </g>
+  <!-- étoiles -->
+  <g fill="#f6f1e7" opacity="0.3">
+    <circle cx="200" cy="50" r="2"/><circle cx="380" cy="35" r="1.5"/>
+    <circle cx="500" cy="55" r="2"/><circle cx="150" cy="65" r="1.5"/>
+    <circle cx="450" cy="40" r="2"/><circle cx="250" cy="30" r="1.5"/>
+  </g>
+</svg>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Coin &amp; Potager</title>
+<meta name="description" content="Une question, une suggestion ou une demande de partenariat ? Contactez l'équipe de Coin & Potager.">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/analytics.js" defer></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <nav class="crumb" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span>/</span>Contact</nav>
+
+  <div class="page-head">
+    <div class="eyebrow">Une question ?</div>
+    <h1>Contact</h1>
+    <p>Une suggestion, une erreur repérée, une demande de partenariat ? Écrivez-nous.</p>
+  </div>
+
+  <div class="wrap" style="margin-bottom:50px;">
+    <form class="cform" onsubmit="event.preventDefault(); alert('Formulaire de démo — à connecter à un service comme Formspree lors de la mise en ligne.');">
+      <label for="nom">Votre nom <span class="req" aria-hidden="true">*</span></label>
+      <input id="nom" name="nom" type="text" autocomplete="name" placeholder="Prénom Nom" required>
+
+      <label for="email">Votre email <span class="req" aria-hidden="true">*</span></label>
+      <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="votre@email.fr" required>
+      <p class="help">Nous l'utilisons uniquement pour vous répondre.</p>
+
+      <label for="msg">Votre message <span class="req" aria-hidden="true">*</span></label>
+      <textarea id="msg" name="msg" placeholder="Bonjour..." required></textarea>
+
+      <button type="submit" class="btn">Envoyer le message</button>
+    </form>
+    <p style="text-align:center;margin-top:18px;font-size:.85rem;color:var(--text-mute);">Le formulaire devra être relié à un service d'envoi (Formspree, Web3Forms — gratuits) lors du déploiement, car un site statique ne traite pas les emails seul.</p>
+  </div>
+
+  <div id="site-footer"></div>
+  <script src="../assets/layout.js" data-base="../"></script>
+</body>
+</html>
